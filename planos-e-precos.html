@@ -1,0 +1,99 @@
+---
+layout: page
+title: Planos e Preços
+body_class: planos
+custom_js:
+- calculator/ApiService.js
+- calculator/HelperService.js
+- calculator/AbstractEntry.js
+- calculator/ProductEntry.js
+- calculator/DiscountCouponEntry.js
+- calculator/calculator.js
+---
+
+<div class="texto">
+    <div class="layout">
+        <div class="esquerda">
+            <img src="/assets/img/icone-planos-precos.png" alt="">
+        </div>
+        <div class="direita">
+            <h2>Escolha o plano ideal <span class="verde">para a sua Igreja</span></h2>
+            <p>No controlook você pode escolher planos que se encaixam à sua necessidade, além disso você poderá contratar pacotes adicionais que permitirá uma gestão de forma específica e bem direcionada para sua realidade.</p>
+        </div>
+    </div>
+</div>
+
+<div class="planos_wrap">
+    <div class="layout">
+        <form method="get" action="https://sys.controlook.com/signup">
+            <input type="hidden" name="calculated" value="true">
+
+            <div id="calculadora" class="calculadora calculator">
+                <input type="hidden" name="plan_value" value="0" data-product-key="plan_value">
+
+                <div class="calculadora_wrap form">
+
+                    <div class="topo">
+                        <h2>Escolha <strong>um plano</strong></h2>
+                        <div class="botoes">
+                            <a href="javascript:void(0);" class="botao ativo" data-preset="small">Small</a>
+                            <a href="javascript:void(0);" class="botao" data-preset="medium">Medium</a>
+                            <a href="javascript:void(0);" class="botao" data-preset="large">Large</a>
+                        </div>
+                    </div> <!-- end of topo  -->
+                    <div class="base_corpo">
+                        <div class="topo">
+                            <p class="esquerda">Funcionalidade</p>
+                            <p class="direita">Preço</p>
+                        </div>
+                        <div class="corpo">
+                            <div data-product-list></div>
+                            <div class="linha fixo">
+                                <label class="checkbox">
+                                    <!-- <input type="checkbox"> -->
+                                    <p>Aplicativo</p>
+                                </label>
+                                <div class="valor_direita fixa">
+                                    <a href="javascript:void(0);" class="menos"></a>
+                                    <div class="informacoes">
+                                        <p class="cinza">Android/IOS</p>
+                                    </div>
+                                    <a href="javascript:void(0);" class="mais"></a>
+                                </div>
+                            </div> <!-- end of linha  -->
+                            <div class="linha fixo">
+                                <label class="checkbox">
+                                    <!-- <input type="checkbox"> -->
+                                    <p>Contas a Pagar/Receber</p>
+                                </label>
+                                <div class="valor_direita fixa">
+                                    <a href="javascript:void(0);" class="menos"></a>
+                                    <div class="informacoes">
+                                        <p class="cinza">Lançamentos Ilimitados</p>
+                                    </div>
+                                    <a href="javascript:void(0);" class="mais"></a>
+                                </div>
+                            </div> <!-- end of linha  -->
+                        </div> <!-- end of corpo  -->
+                        <div class="base">
+                            <div class="total">
+                                <p class="esquerda">DESCONTO</p>
+                                <p class="direita" data-product-key="discount_value"></p>
+                            </div>
+                            <div class="total nomargin">
+                                <p class="esquerda">TOTAL</p>
+                                <p class="direita verde" data-product-key="total"></p>
+                            </div>
+                        </div>
+                        <div class="info-gratuidade">
+                            A cobrança será realizada somente após o período de gratuidade.
+                        </div>
+                        <button class="botao verde confirmar" id="btnConfirmarPacotes" type="submit">
+                            Confirmar estes pacotes
+                        </button>
+                    </div> <!-- end of direita  -->
+                </div> <!-- end of calculadora_wrap  -->
+            </div>
+        </form>
+    </div>
+</div>

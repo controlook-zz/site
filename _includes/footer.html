@@ -1,0 +1,86 @@
+<div class="aplicativo">
+    <div class="layout">
+        <div class="esquerda foo">
+            <div class="texto">
+                <h2>Em qualquer lugar, a qualquer hora para os Membros de sua Igreja</h2>
+                <p>Mantenha os membros de sua Igreja atualizados de todos os eventos, agendas, cultos, programações de forma simples em um único lugar.</p>
+                <div class="lojas">
+                    <a href="https://play.google.com/store/apps/details?id=com.controlook.igrejas"><img src="/assets/img/download-app-android.png" alt="Aplicativo para Android"></a>
+                    <a href="https://itunes.apple.com/br/app/controlook-igrejas/id1258342944?mt=8"><img src="/assets/img/download-app-apple.png" alt="Aplicativo para iOS"></a>
+                </div>
+            </div>
+        </div>
+        <div class="direita foo">
+            <div class="foto">
+                <img src="/assets/img/app-controlook.png" alt="Aplicativos para Android e iOS">
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="topo">
+        <div class="layout">
+            <div class="coluna">
+                <a href="index" class="logo"><img src="/assets/img/logo-controlook.png" alt="Logo Controlook"></a>
+                <p>Controlook é um sistema online para organizar sua igreja com uma eficaz gestão financeira e controle dos membros</p>
+            </div>
+            <div class="coluna">
+                <p class="titulo">Controlook</p>
+                <ul>
+                    <li><a href="/sistema-gestao-igrejas">Sobre a Empresa</a> </li>
+                    <li><a href="/funcionalidades">Funcionalidades</a></li>
+                    <li><a href="/planos-e-precos">Planos e Preços</a> </li>
+                    <li><a href="/quero-receber-uma-ligacao">Quero receber uma ligação</a> </li>
+                    <li><a href="/contato">Fale Conosco</a> </li>
+                    <li><a href="{{ url_signup }}">Cadastre-se</a> </li>
+                </ul>
+            </div>
+            <!-- <div class="coluna">
+                <p class="titulo"></p>
+                <ul>
+                    <li> <a href="#"></a> </li>
+                </ul>
+            </div> -->
+            <div class="coluna">
+                <p class="titulo">Redes Sociais</p>
+                <ul class="social">
+                    <li><a class="facebook" href="https://www.facebook.com/controlook" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a class="youtube" href="https://www.youtube.com/channel/UCAOxhAI7iT9sSEoSaJ9ZRew" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    <li><a class="twitter" href="https://twitter.com/controlook" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a class="instagram" href="https://www.instagram.com/controlook" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="layout">
+            <p>Copyright &copy; 2018 | Todos os direitos reservados. <a class="termo-uso" href="termos-uso">Termos de Uso e Política de Privacidade</a></p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal-box" id="menu">
+    <a href="#" class="fechar"><i class="fas fa-times"></i></a>
+    <a href="#" class="logo"><img src="/assets/img/logo-controlook.png" alt="Logo Controlook"></a>
+    <nav>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/sistema-gestao-igrejas">Quem Somos</a></li>
+            <li><a href="/funcionalidades">Funcionalidades</a></li>
+            <li><a href="/planos-e-precos">Planos</a></li>
+            <li><a href="/contato">Contato</a></li>
+            <li><a href="{{ site.url_login }}">Login</a></li>
+            <li class="cta"><a href="{{ site.url_signup }}" class="botao verde">Cadastre-se</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/OwlCarousel/owl.carousel.min.js"></script>
+<script src="/assets/js/main.js?4"></script>
+{% if page.custom_js %}
+{% for js_file in page.custom_js %}
+<script src='/assets/js/{{ js_file }}.js' type="text/javascript"></script>
+{% endfor %}
+{% endif %}

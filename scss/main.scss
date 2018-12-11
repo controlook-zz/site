@@ -1,0 +1,1364 @@
+@charset "UTF-8";
+@import "fontawesome/fontawesome.scss";
+@import "normalize";
+@import "../node_modules/susy/sass/susy";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "grid";
+@import "mixins_fixes";
+@import "gerais";
+@import "forms";
+@import "modals";
+@import "dropdown";
+@import "plugins";
+
+body.inicial {
+  header {
+    background: none;
+
+    @include breakpoint($wide) {
+      background: #fff;
+    }
+
+    .logo {
+      width: 15%;
+
+      @include breakpoint($wide) {
+        width: auto;
+      }
+    }
+
+    .botao-responsivo {
+      @include breakpoint($wide) {
+        display: block !important;
+      }
+    }
+
+    nav {
+      float: left;
+      width: 80%;
+      padding-left: 3%;
+
+      @include breakpoint($wide) {
+        display: none;
+      }
+
+      li {
+        &:first-child {
+          display: none;
+        }
+
+        &.login {
+          float: right;
+          position: relative;
+          right: 190px;
+
+          a {
+            color: #fff;
+          }
+        }
+
+        &.cta {
+          margin-right: -50px;
+
+          a {
+            background: #fff;
+            color: $verde;
+            transition: color 0.35s ease-in-out, background 0.35s ease-in-out;
+
+            @include breakpoint($wide) {
+              &:hover {
+                color: #fff;
+                background: $azul;
+              }
+            }
+          }
+
+          a {
+            padding: 0 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .chamada {
+    padding-bottom: 100px;
+    @include clearfix;
+    position: relative;
+
+    @include breakpoint($tablet) {
+      padding-bottom: 0;
+    }
+
+    &:before {
+      content: url(../img/sombra_chamada.png);
+      position: absolute;
+      width: 100%;
+      top: -90px;
+      left: 0;
+      z-index: 1;
+      max-width: 1228px;
+      max-height: 886px;
+      @include breakpoint($wide_grande) {
+        display: none;
+      }
+    }
+
+    .fundo {
+      width: 50%;
+      height: 100%;
+      background: url(../img/bg_chamada.jpeg) no-repeat center;
+      background-size: cover;
+      display: block;
+      position: absolute;
+      top: -90px;
+      right: 0;
+      z-index: 1;
+
+      @include breakpoint($wide) {
+        width: 100%;
+        height: 630px;
+      }
+
+      &:before {
+        position: absolute;
+        content: url(../img/mascara_home.png);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include breakpoint($wide) {
+          display: none;
+        }
+      }
+    }
+
+    .texto {
+      @include col2;
+      text-align: center;
+      padding-top: 200px;
+      position: relative;
+      z-index: 2;
+
+      @include breakpoint($wide) {
+        padding-top: 60px;
+      }
+
+      .owl-slide {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .owl-item {
+          // background: #f3f6fc;
+        }
+
+        .owl-prev {
+          span {
+          }
+        }
+
+        .owl-next {
+          span {
+          }
+        }
+      }
+
+      .titulo {
+        font-size: 45px;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        color: $azul;
+
+        @include breakpoint($wide) {
+          color: #fff;
+          font-size: 35px;
+        }
+
+        span {
+          color: $verde;
+
+          @include breakpoint($wide) {
+            font-size: 35px;
+            color: #fff;
+          }
+        }
+      }
+
+      .subtitulo {
+        font-size: 18px;
+        max-width: 450px;
+        margin: 20px auto;
+        color: #8992be;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
+
+        @include breakpoint($wide) {
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+
+      .botao {
+      }
+    }
+
+    .foto {
+      @include col2;
+      padding-top: 70px;
+      position: relative;
+      z-index: 3;
+      top: 70px;
+
+      @include breakpoint($wide) {
+        top: -20px;
+        text-align: center;
+      }
+
+      img {
+      }
+    }
+  }
+
+  .conteudo {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 0;
+    padding-top: 50px;
+  }
+}
+
+body.planos {
+  background: #f3f6fc;
+
+  .titulo_principal {
+    .layout {
+      h1 {
+      }
+    }
+  }
+
+  .conteudo {
+    padding: 0;
+
+    .texto {
+      background: #fff;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      @include breakpoint($tablet) {
+        padding-bottom: 40px;
+        padding-top: 40px;
+      }
+
+      .layout {
+        @include clearfix;
+
+        .esquerda {
+          @include col2;
+          padding-right: 25px;
+          text-align: right;
+
+          @include breakpoint($tablet) {
+            padding: 0;
+          }
+
+          img {
+          }
+        }
+
+        .direita {
+          @include col2;
+          padding-left: 25px;
+
+          @include breakpoint($tablet) {
+            padding: 0;
+          }
+
+          h2 {
+            font-size: 35px;
+            color: #215aca;
+            margin-top: 50px;
+
+            @include breakpoint($tablet) {
+              margin-top: 20px;
+              font-size: 25px;
+            }
+
+            .verde {
+              display: block;
+            }
+          }
+
+          p {
+            max-width: 535px;
+            margin-top: 30px;
+            color: #8992be;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 23.96px;
+          }
+        }
+      }
+    }
+
+    .menu {
+      text-align: center;
+      margin-top: -92px;
+
+      @include breakpoint($tablet) {
+        margin-top: 30px;
+      }
+
+      h2 {
+        color: #2f64cd;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 38.46px;
+        margin-bottom: 25px;
+      }
+
+      ul {
+        border-radius: 30px;
+        background-color: #e0e7f6;
+        display: inline-block;
+
+        @include breakpoint($tablet) {
+          border-radius: 0;
+          display: block;
+          width: 100%;
+        }
+
+        li {
+          display: inline-block;
+
+          @include breakpoint($tablet) {
+            display: block;
+            width: 100%;
+          }
+
+          a {
+            display: inline-block;
+            border-radius: 26px;
+            background-color: #e0e7f6;
+            color: #235cca;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 17px 35px;
+            margin: 4px 4px;
+            transition: background 0.35s ease-in-out;
+
+            @include breakpoint($tablet) {
+              padding: 10px 15px;
+              font-size: 14px;
+              width: 100%;
+              margin: 4px 4px !important;
+              max-width: 90%;
+            }
+
+            &:hover {
+              background-color: lighten(#e0e7f6, 3%);
+            }
+
+            &.ativo {
+              background-color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    .planos_wrap {
+      padding: 70px 0;
+
+      .layout {
+        .calculadora {
+          footer {
+            position: fixed;
+          }
+
+          .calculadora_wrap {
+            width: 100%;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+            @include clearfix;
+
+            .topo {
+              color: #3ab94f;
+              text-align: center;
+              width: 100%;
+              float: none;
+              margin-left: auto;
+              margin-right: auto;
+              max-width: initial;
+
+              h2 {
+                margin-bottom: 10px;
+                display: block;
+                width: 100%;
+                color: #2f64cd;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 38.41px;
+              }
+
+              .botoes {
+                border-radius: 30px;
+                background-color: #e0e7f6;
+                padding-top: 5px;
+                max-width: 346px;
+                margin-left: auto;
+                margin-right: auto;
+
+                .popular {
+                  position: relative;
+
+                  @include breakpoint($wide) {
+                    display: inline-block;
+                    width: auto;
+                  }
+
+                  .botao {
+                  }
+                }
+
+                .botao {
+                  display: inline-block;
+                  width: auto;
+                  background-color: #e0e7f6;
+                  border-radius: 55px;
+                  color: #235cca;
+                  font-size: 16px;
+                  font-weight: 700;
+                  margin-bottom: 5px;
+                  padding: 11px 30px !important;
+                  transition: color 0.35s ease-in-out,
+                    background 0.35s ease-in-out;
+
+                  &:hover,
+                  &.ativo {
+                    color: #47bb57;
+                    background: #fff;
+                  }
+                }
+              }
+
+              .plano_personalizado {
+                margin-top: 25px;
+                color: #687d9c;
+                text-align: left;
+                font-size: 14px;
+                font-weight: 300;
+                position: relative;
+
+                @include breakpoint($wide) {
+                  text-align: center;
+                }
+
+                &:after {
+                  position: absolute;
+                  bottom: -10px;
+                  right: 0;
+                  content: url(../../assets/img/calculadora-seta.png);
+                  width: 66px;
+                  height: 37px;
+                  display: block;
+
+                  @include breakpoint($wide) {
+                    display: none;
+                  }
+                }
+              }
+            }
+
+            .base_corpo {
+              margin-top: 15px;
+
+              .topo {
+                background: #e0e7f6;
+                padding: 20px;
+                @include clearfix;
+
+                @include breakpoint($tablet) {
+                  padding: 10px;
+                }
+
+                p {
+                  color: #235cca;
+                  font-size: 14px;
+                  font-weight: 500;
+                }
+
+                p.esquerda {
+                  float: left;
+                  text-align: left;
+                  width: auto;
+                }
+
+                p.direita {
+                  float: right;
+                  text-align: right;
+                  width: auto;
+                }
+              }
+
+              .corpo {
+                background: #fff;
+                box-shadow: 0 0 27px rgba(90, 131, 233, 0.07);
+                border-radius: 5px;
+                background-color: #ffffff;
+
+                .linha {
+                  padding: 15px 10px;
+                  margin: 0;
+                  border-bottom: 1px solid #eff2f7;
+                  @include clearfix;
+                  position: relative;
+                  margin-bottom: 0 !important;
+                  min-height: 72px;
+
+                  @include breakpoint($tablet) {
+                    padding-top: 20px;
+                    padding-bottom: 0;
+                  }
+
+                  .checkbox {
+                    position: absolute;
+                    top: 50%;
+                    left: 20px;
+                    transform: translateY(-50%);
+                    padding-left: 30px;
+                    margin: 0;
+                    width: 45%;
+                    max-width: 215px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+
+                    &.ativo {
+                      &:before {
+                        background: $verde !important;
+                        border: 1px solid $verde !important;
+                        box-shadow: initial;
+                      }
+
+                      &:after {
+                        opacity: 1;
+                      }
+                    }
+
+                    @include breakpoint($tablet) {
+                      transform: translateY(0%);
+                      position: relative;
+                      width: 100%;
+                      height: auto;
+                      top: 0;
+                      left: 0;
+                      padding-left: 30px;
+                      padding-right: 20px;
+                    }
+
+                    &:hover {
+                      &:before {
+                        background-color: darken(#f5f7fa, 5%);
+                        border: 1px solid darken(#d7dee8, 5%);
+                      }
+                    }
+
+                    &:after {
+                      transition: all 0.35s ease-in-out;
+                    }
+
+                    &:before {
+                      box-shadow: inset 0 3px 6px rgba(196, 211, 233, 0.52);
+                      border-radius: 3px;
+                      border: 1px solid #d7dee8;
+                      background-color: #f5f7fa;
+                      opacity: 0.99;
+                      width: 18px;
+                      height: 18px;
+                      top: -1px;
+                      transition: all 0.35s ease-in-out;
+                    }
+
+                    input {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+
+                      @include breakpoint($tablet) {
+                        margin-right: 10px;
+                      }
+                    }
+
+                    p {
+                      color: #687d9c;
+                      font-size: 14px;
+                      font-weight: 300;
+                    }
+                  }
+
+                  .valor_direita {
+                    float: right;
+                    width: 60%;
+                    max-width: 240px;
+                    position: relative;
+                    padding: 0 40px;
+                    box-shadow: initial;
+
+                    &.fixa {
+                      position: relative;
+                      top: 14px;
+
+                      @include breakpoint($tablet) {
+                        top: -5px;
+                        left: -9px;
+                      }
+                    }
+
+                    @include breakpoint($tablet) {
+                      padding-left: 0;
+                      padding-right: 30px;
+                      position: relative;
+                      width: 100%;
+                      top: 0;
+                      left: 0;
+                      max-width: none;
+                      float: left;
+                      padding-top: 10px;
+                    }
+
+                    .menos {
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      left: 0;
+
+                      @include breakpoint($tablet) {
+                        transform: translateY(0%);
+                        top: 5px;
+                        left: initial;
+                        right: 0;
+                        position: relative;
+                        display: inline-block;
+                      }
+
+                      &:after {
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        content: url(../img/icone-menos.png);
+                      }
+                    }
+
+                    .mais {
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      right: 0;
+
+                      @include breakpoint($tablet) {
+                        transform: translateY(0%);
+                        top: 5px;
+                        left: initial;
+                        right: 0;
+                        position: relative;
+                        display: inline-block;
+                      }
+
+                      &:after {
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        content: url(../img/icone-mais.png);
+                      }
+                    }
+
+                    .informacoes {
+                      text-align: right;
+
+                      @include breakpoint($tablet) {
+                        text-align: left;
+                        padding: 10px 0;
+                        display: inline-block;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                      }
+
+                      .cinza {
+                        color: #687d9c;
+                        font-size: 14px;
+                        font-weight: 300;
+                      }
+
+                      .verde {
+                        margin-top: 5px;
+                        color: #43b953;
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                      }
+                    }
+                  }
+
+                  &.desconto {
+                    .valor_direita {
+                      padding-right: 10px;
+                      max-width: 260px;
+
+                      @include breakpoint($tablet) {
+                        max-width: none;
+                      }
+                    }
+
+                    .discount_coupon {
+                      border: 1px solid #dde0ec;
+                    }
+                  }
+
+                  &.fixo {
+                    .checkbox {
+                      padding-left: 0;
+
+                      &:before,
+                      &:after {
+                        display: none;
+                      }
+                    }
+
+                    .valor_direita {
+                      padding-right: 10px;
+                      max-width: 300px;
+                    }
+
+                    .informacoes {
+                      .cinza {
+                        color: $verde;
+                        font-size: 14px;
+                        font-weight: 500;
+                      }
+                    }
+
+                    .mais,
+                    .menos {
+                      display: none;
+                    }
+                  }
+
+                  &.cinza {
+                    height: 50px;
+                    padding: 0;
+
+                    @include breakpoint($tablet) {
+                      min-height: 50px;
+                      padding-top: 15px;
+                      padding-left: 10px;
+                    }
+
+                    .checkbox {
+                      p {
+                        opacity: 0.5;
+                        color: #687d9c;
+                      }
+                    }
+
+                    .informacoes,
+                    .mais,
+                    .menos {
+                      display: none;
+                    }
+                  }
+                }
+              }
+
+              .base {
+                background: #fff;
+                margin-top: 20px;
+                box-shadow: 0 0 27px rgba(90, 131, 233, 0.07);
+                border-radius: 5px;
+                background-color: #ffffff;
+                padding: 30px 30px;
+
+                .total {
+                  @include clearfix;
+                  border-bottom: 1px solid #dfe5ef;
+                  padding-bottom: 20px;
+                  margin-bottom: 20px;
+
+                  &.nomargin {
+                    padding-bottom: 0;
+                    border: 0;
+                    margin: 0;
+                  }
+
+                  .esquerda {
+                    float: left;
+                    text-align: left;
+                    width: auto;
+                    color: #8f9cb1;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                  }
+
+                  .direita {
+                    width: auto;
+                    float: right;
+                    color: #2664df;
+                    font-size: 20px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+
+                    &.verde {
+                      color: #45ba55;
+                      font-size: 25px;
+                      font-weight: 700;
+                      top: -6px;
+                      position: relative;
+                      text-transform: uppercase;
+                    }
+                  }
+                }
+              }
+
+              .botao.confirmar {
+                width: 290px;
+                display: block;
+                margin-top: 25px;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.contato {
+  .conteudo {
+    background: #f9faff;
+
+    .layout {
+      @include clearfix;
+
+      .sucesso {
+        text-align: center;
+
+        h2 {
+          color: #215aca;
+          font-size: 40px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: #8992be;
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 23.96px;
+
+          a {
+            color: $verde;
+          }
+        }
+
+        .botao {
+          margin-top: 30px;
+        }
+      }
+
+      .esquerda {
+        @include col2;
+        padding: 0 30px;
+
+        @include breakpoint($tablet) {
+          padding: 0;
+        }
+
+        form {
+          max-width: 500px;
+          float: right;
+
+          .linha {
+            label {
+            }
+
+            input {
+            }
+          }
+        }
+      }
+
+      .direita {
+        @include col2;
+        padding: 0 30px;
+
+        @include breakpoint($tablet) {
+          padding: 0;
+        }
+
+        .bloco {
+          max-width: 353px;
+          background-color: #ecf2ff;
+          padding: 25px 25px;
+          padding-left: 66px;
+          position: relative;
+          margin-bottom: 16px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          @include breakpoint($tablet) {
+            padding: 20px;
+          }
+
+          &:after {
+            content: url(../img/mascara_controlook.png);
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+
+          img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            @include breakpoint($tablet) {
+              top: 0;
+              left: 0;
+              margin-bottom: 10px;
+              position: relative;
+            }
+          }
+
+          .bold {
+            color: #215aca;
+            font-size: 18px;
+            font-weight: 700;
+            padding-bottom: 20px;
+          }
+
+          .normal {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 400;
+            color: #96a6c6;
+          }
+        }
+      }
+    }
+
+    .mapa {
+      margin-top: 90px;
+      float: left;
+      width: 100%;
+      display: none;
+
+      iframe {
+      }
+    }
+  }
+
+  .depoimentos {
+  }
+
+  .aplicativo {
+  }
+}
+
+body.quem-somos,
+body.generico {
+  .titulo_principal {
+    .layout {
+      h1 {
+      }
+    }
+  }
+
+  .conteudo {
+    padding-bottom: 0;
+    padding-top: 0;
+
+    .chamada_principal {
+      padding-top: 60px;
+      padding-bottom: 50px;
+      background: #f3f6fc;
+      position: relative;
+      margin-bottom: 230px;
+      @include breakpoint($tablet) {
+        margin-bottom: 90px;
+      }
+      &:after {
+        position: absolute;
+        bottom: -140px;
+        left: 0;
+        width: 100%;
+        content: " ";
+        display: block;
+        height: 161px;
+        background: url(../img/quem-somos-mascara.png);
+        @include breakpoint($tablet) {
+          display: none;
+        }
+      }
+
+      @include breakpoint($tablet) {
+        padding: 50px 0;
+      }
+
+      .layout {
+        max-width: 915px;
+        margin-left: auto;
+        margin-right: auto;
+        @include clearfix;
+
+        .texto {
+          text-align: center;
+
+          h2 {
+            color: #215aca;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+
+            @include breakpoint($tablet) {
+              font-size: 25px;
+              text-align: center;
+            }
+
+            .verde {
+              display: block;
+            }
+          }
+
+          p {
+            color: #8992be;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 23.96px;
+
+            @include breakpoint($tablet) {
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+        }
+
+        .valores {
+          padding-top: 50px;
+
+          .valor {
+            float: left;
+            width: susy-span(3 of 12);
+            margin-right: gutter(of 12);
+            &:last-child {
+              margin-right: 0;
+            }
+            @include breakpoint($wide) {
+              padding: 0 10px;
+              text-align: center;
+            }
+            @include breakpoint($mobile) {
+              width: 50%;
+              float: left;
+              margin: 0;
+              margin-bottom: 20px;
+            }
+
+            p.azul {
+              font-size: 37px;
+              color: $azul;
+              font-weight: 700;
+              @include breakpoint($tablet) {
+                font-size: 25px;
+                padding-bottom: 5px;
+              }
+            }
+
+            p.normal {
+              font-weight: 400;
+              color: #72809c;
+            }
+          }
+        }
+      }
+    }
+
+    .conteudo_blocos {
+      .bloco {
+        @include clearfix;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 80px;
+        position: relative;
+        left: 20px;
+        @include breakpoint($tablet) {
+          left: 0 !important;
+          right: 0 !important;
+          margin-bottom: 30px;
+        }
+
+        &:nth-child(even) {
+          position: relative;
+          left: 0;
+          right: 20px;
+          .foto {
+            float: right;
+            text-align: left;
+            img {
+            }
+          }
+          .texto {
+            text-align: right;
+            float: left;
+            padding-left: 0px;
+            padding-right: 70px;
+          }
+        }
+        .foto {
+          width: 50%;
+          float: left;
+          text-align: right;
+          @include breakpoint($tablet) {
+            float: none;
+            padding: 0;
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: left;
+          }
+          img {
+            width: 100%;
+            max-width: 554px;
+            display: inline-block;
+            box-shadow: 0 0 24px rgba(186, 184, 198, 0.2);
+          }
+        }
+
+        .texto {
+          width: 50%;
+          float: right;
+          padding-left: 70px;
+          padding-top: 60px;
+          @include breakpoint($tablet) {
+            float: none;
+            padding: 0 !important;
+            width: 100%;
+            text-align: left !important;
+          }
+          h2 {
+            color: #215aca;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            @include breakpoint($tablet) {
+              font-size: 25px;
+            }
+          }
+
+          p {
+            color: #8992be;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    .diferenciais {
+      background: #f9faff;
+      padding-top: 100px;
+      padding-bottom: 50px;
+
+      @include breakpoint($tablet) {
+        padding-top: 50px;
+      }
+
+      .layout {
+        @include clearfix;
+
+        .foto {
+          @include col2;
+          text-align: right;
+          padding-right: 10px;
+
+          @include breakpoint($tablet) {
+            padding: 0;
+            text-align: center;
+          }
+
+          img {
+            display: inline-block;
+            padding-top: 100px;
+
+            @include breakpoint($tablet) {
+              padding-top: 50px;
+            }
+          }
+        }
+
+        .texto {
+          @include col2;
+          background: none;
+          padding-left: 50px;
+
+          &:after {
+            display: none;
+          }
+
+          @include breakpoint($tablet) {
+            padding: 0;
+          }
+
+          .ckeditor {
+            p {
+              color: #8992be;
+              font-size: 18px;
+              font-weight: 300;
+              line-height: 24px;
+
+              @include breakpoint($tablet) {
+                font-size: 16px;
+              }
+            }
+
+            ul {
+              @include breakpoint($tablet) {
+                margin-left: 0;
+              }
+
+              li {
+                position: relative;
+                list-style: none;
+                color: #8992be;
+                font-size: 16px;
+                font-weight: 300;
+                margin: 20px 0;
+                padding-left: 34px;
+
+                &:first-child {
+                  @include breakpoint($tablet) {
+                    margin-top: 0;
+                  }
+                }
+
+                &:before {
+                  margin-right: 10px;
+                  top: 5px;
+                  content: url(../img/check.png);
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.politicas,
+body.termos {
+  .ckeditor {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    box-shadow: 0 0 27px rgba(90, 131, 233, 0.07);
+    padding: 50px;
+
+    @include breakpoint($tablet) {
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+
+    p,
+    li {
+      color: #656b88;
+      font-size: 15px;
+    }
+  }
+}
+
+body.pagina_nao_encontrada {
+  .conteudo {
+    background: #fff;
+
+    .layout {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .titulo_404 {
+        text-align: left;
+        padding-left: 125px;
+        position: relative;
+
+        @include breakpoint($tablet) {
+          padding: 0;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          @include breakpoint($tablet) {
+            position: relative;
+            margin-bottom: 20px;
+          }
+        }
+
+        p {
+          color: #3968d6;
+          padding-top: 5px;
+          font-size: 37px;
+          font-weight: 700;
+
+          @include breakpoint($tablet) {
+            font-size: 25px;
+          }
+        }
+      }
+
+      .botoes {
+        text-align: left;
+        padding-top: 50px;
+
+        @include breakpoint($tablet) {
+          padding-top: 20px;
+        }
+
+        a {
+          display: inline-block;
+          margin: 0 10px;
+          text-align: center;
+
+          @include breakpoint($tablet) {
+            margin-bottom: 10px;
+            margin-left: 0;
+            min-width: initial;
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

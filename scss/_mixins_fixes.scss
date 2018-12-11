@@ -1,0 +1,117 @@
+/*=========================================
+=            Fixes                       =
+=========================================*/
+
+span,
+select,
+article,
+section,
+header,
+aside,
+footer,
+textarea,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+div,
+ul,
+li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+iframe[name="google_conversion_frame"] {
+    height: 0!important;
+    overflow: hidden;
+    display: block;
+}
+
+pre {
+    z-index: 2;
+}
+
+img[data-pin-nopin="true"] {
+    display: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style-type: none;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden, .esconder {
+    display: none;
+}
+
+.clearfix, .center:after {
+    clear: both;
+    height: 0;
+}
+
+header {
+    nav {
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+/*==============================
+=            mixins            =
+==============================*/
+
+// clearfix
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: ' ';
+        display: table;
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}

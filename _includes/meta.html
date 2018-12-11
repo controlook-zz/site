@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>{% if page.title %}{{ page.title | append: " - Controlook" }}{% else %}{{ site.title }}{% endif %}</title>
+{% if page.noindex %}
+<meta name=”robots” content=”noindex”>{% endif %}
+<meta name="author" content="Controlook" />
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="{% if page.title %}{{ page.title | append: " - Controlook" }}{% else %}{{ site.title }}{% endif %}" />
+<meta property="og:image" content="/assets/img/img-facebook.jpg" />
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="{% if page.title %}{{ page.title | append: " - Controlook" }}{% else %}{{ site.title }}{% endif %}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+    {
+        "@type": "WebPage",
+        "headline": "{% if page.title %}{{ page.title | append: " - Controlook " }}{% else %}{{ site.title }}{% endif %}",
+        "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
+        "description": "{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}",
+        "@context": "http://schema.org"
+    }
+</script>

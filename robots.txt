@@ -1,0 +1,8 @@
+# www.robotstxt.org/
+
+# Allow crawling of all content
+User-agent: *
+Disallow: 404.html
+Disallow: 404
+Disallow: obrigado-pelo-contato.html
+Disallow: quero-receber-uma-ligacao.html

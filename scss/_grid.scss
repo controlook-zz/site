@@ -1,0 +1,165 @@
+$mobile: max-width 480px;
+$mobile_grande: max-width 768px;
+$tablet: max-width 960px;
+$tablet_grande: max-width 1024px;
+$wide: max-width 1200px;
+$wide_grande: max-width 1400px;
+
+.layout {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 1.25rem;
+}
+.desktop {
+    @include breakpoint($tablet) {
+        display: none !important;
+    }
+}
+.mobile {
+    display: none !important;
+    @include breakpoint($tablet) {
+        display: inline-block !important;
+    }
+}
+
+/*=======================================
+=            mixins de grids            =
+=======================================*/
+
+@mixin full {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+@mixin col2 {
+    float: left;
+    width: susy-span(6 of 12);
+    margin-right: gutter(of 12);
+    &:last-child {
+        margin-right: 0;
+    }
+    @include breakpoint($tablet) {
+        @include full;
+    }
+}
+@mixin col3 {
+    float: left;
+    width: susy-span(4 of 12);
+    margin-right: gutter(of 12);
+    &:last-child {
+        margin-right: 0;
+    }
+    @include breakpoint($tablet_grande) {
+        @include full;
+    }
+}
+@mixin col4 {
+    float: left;
+    width: susy-span(3 of 12);
+    margin-right: gutter(of 12);
+    &:last-child {
+        margin-right: 0;
+    }
+    @include breakpoint($wide) {
+        width: susy-span(6 of 12);
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+    }
+    @include breakpoint($tablet) {
+        @include full;
+    }
+}
+@mixin col5 {
+    float: left;
+    width: susy-span(2 of 10);
+    margin-right: gutter(of 10);
+    &:last-child {
+        margin-right: 0;
+    }
+    @include breakpoint($wide) {
+        width: susy-span(5 of 10);
+        &:nth-child(2), &:nth-child(4),  {
+            margin-right: 0;
+        }
+    }
+    @include breakpoint($tablet) {
+        @include full;
+    }
+}
+@mixin gal2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    &>div {
+        margin-bottom: gutter(of 10);
+        margin-right: gutter(of 10);
+    }
+}
+@mixin gal3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint($mobile_grande) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    &>div {
+        margin-bottom: gutter(of 10);
+        margin-right: gutter(of 10);
+    }
+}
+@mixin gal4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    @include clearfix;
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    &>div {
+        margin-bottom: gutter(of 10);
+        margin-right: gutter(of 10);
+    }
+}
+@mixin gal5 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    @include breakpoint($wide_grande) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    &>div {
+        margin-bottom: gutter(of 10);
+        margin-right: gutter(of 10);
+    }
+}
+@mixin gal6 {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    @include breakpoint($wide_grande) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    @include breakpoint($tablet_grande) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include breakpoint($mobile_grande) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    &>div {
+        margin-bottom: gutter(of 10);
+        margin-right: gutter(of 10);
+    }
+}

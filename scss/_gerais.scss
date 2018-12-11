@@ -1,0 +1,807 @@
+/*=================================
+=            variaveis            =
+=================================*/
+
+$fonte_cor: #393939;
+$azul: #225ccd;
+$verde: #44b953;
+$fonte1: "Nunito", sans-serif;
+
+/*========================================
+=                  Css base              =
+========================================*/
+
+body {
+  font-family: $fonte1;
+  background: #f9faff;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+}
+
+strong {
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+a {
+  text-decoration: none;
+}
+
+.verde {
+  color: $verde;
+}
+
+/*================================
+=            ckeditor            =
+================================*/
+
+.ckeditor {
+  a {
+  }
+  p {
+    margin: 13px 0;
+  }
+  p,
+  li {
+    color: #797f9a;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 24px;
+    @include breakpoint($tablet) {
+      font-size: 16px;
+    }
+  }
+  em {
+  }
+  img {
+  }
+  strong {
+  }
+  u {
+  }
+  ul {
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    li {
+      margin: 5px 0;
+      list-style-type: disc;
+    }
+  }
+} // ckeditor
+
+/*==============================
+=            tables            =
+==============================*/
+
+table {
+  thead {
+    tr {
+      th {
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+      }
+      td {
+      }
+    }
+  }
+}
+
+/*========================================
+=            botoes e titulos            =
+========================================*/
+
+.botao {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 30px;
+  padding: 8px 30px !important;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background 0.35s ease-in-out;
+  &.verde {
+    color: #ffffff;
+    background: #44b953;
+    &:hover {
+      color: #fff;
+      background: darken(#44b953, 7%);
+    }
+  }
+  &.azul {
+    color: #ffffff;
+    background: #2d5ac7;
+    &:hover {
+      color: #fff;
+      background: darken(#2d5ac7, 7%);
+    }
+  }
+}
+
+/*==============================
+=            header            =
+==============================*/
+
+header {
+  @include clearfix;
+  background: #fff;
+  padding: 22px 0;
+  position: relative;
+  z-index: 3;
+  .layout {
+    .logo {
+      float: left;
+      position: relative;
+      top: 8px;
+      @include breakpoint($tablet) {
+        padding-left: 0;
+      }
+      img {
+      }
+    }
+    nav {
+      float: right;
+      ul {
+        position: relative;
+        top: 7px;
+        li {
+          &.cta {
+            float: right;
+            position: relative;
+            top: -7px;
+            margin-left: 30px;
+            a {
+            }
+          }
+          a {
+            text-decoration: none;
+            padding: 0px 15px;
+            color: #7d8090;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 30px;
+            transition: color 0.35s ease-in-out;
+            &.botao {
+              font-size: 15px;
+            }
+            &:hover {
+              color: $verde;
+            }
+          }
+        }
+      }
+    }
+    .botao-responsivo {
+      float: right;
+      .fas {
+        color: #225ccd;
+        font-size: 28px;
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+}
+
+ul.social {
+  li {
+    display: inline-block;
+    a {
+    }
+  }
+}
+
+/*==============================
+=            footer            =
+==============================*/
+
+footer {
+  .topo {
+    background-color: #ffffff;
+    padding: 70px 0;
+    @include breakpoint($tablet) {
+      padding: 35px 0;
+    }
+    .layout {
+      max-width: 1200px;
+      @include clearfix;
+      .coluna {
+        &:nth-child(1) {
+          width: 35%;
+          padding-right: 50px;
+          float: left;
+          @include breakpoint($tablet) {
+            width: 100%;
+            padding-right: 0;
+          }
+          .logo {
+            @include breakpoint($tablet) {
+              width: 100%;
+              text-align: center;
+              display: block;
+            }
+            img {
+              margin-bottom: 20px;
+              display: inline-block;
+            }
+          }
+          p {
+            color: #9ba7bf;
+            font-size: 14px;
+            font-weight: 400;
+            @include breakpoint($tablet) {
+              text-align: center;
+            }
+          }
+        }
+        &:nth-child(2) {
+          width: 19%;
+          float: left;
+          @include breakpoint($tablet) {
+            display: none;
+          }
+        }
+        &:nth-child(3) {
+          width: 19%;
+          float: left;
+          @include breakpoint($tablet) {
+            display: none;
+          }
+        }
+        &:nth-child(4) {
+          width: 19%;
+          float: left;
+          @include breakpoint($tablet) {
+            display: none;
+          }
+        }
+        .social {
+          margin-top: 15px;
+          @include breakpoint($tablet) {
+            text-align: center;
+          }
+          li {
+            display: inline-block;
+            a {
+              font-size: 20px;
+              &.facebook {
+                color: #3b5999;
+              }
+              &.youtube {
+                color: #d8362a;
+              }
+              &.twitter {
+                color: #77a9ea;
+              }
+              &.instagram {
+                color: #c5365f;
+              }
+              .fab {
+              }
+            }
+          }
+        }
+        p.titulo {
+          color: #215aca;
+          font-size: 17px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+        ul {
+          text-align: left;
+          li {
+            a {
+              font-weight: 400;
+              font-size: 15px;
+              color: #9ba7bf;
+              padding: 10px 0;
+              text-decoration: none;
+              padding: 3px 6px;
+              display: block;
+              transition: color 0.35s ease-in-out;
+              &:hover {
+                color: $verde;
+              }
+            }
+          }
+        }
+      }
+    } // layout
+  } // topo
+  .copyright {
+    background: #f3f6fc;
+    padding: 22px 0;
+    text-align: center;
+    .layout {
+      p {
+        color: #9ba7bf;
+        font-size: 14px;
+        font-weight: 400;
+        a {
+          &.termo-uso {
+            padding-left: 10px;
+          }
+          color: $azul;
+        }
+      }
+    } // layout
+  } // copyright
+}
+
+/*============================
+=            site            =
+============================*/
+
+.titulo_principal {
+  background: url(../img/bg_titulo.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 62px 0;
+  text-align: center;
+  @include breakpoint($tablet) {
+    padding: 35px 0;
+  }
+  .layout {
+    h1 {
+      text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 700;
+      @include breakpoint($tablet) {
+        font-size: 30px;
+      }
+    }
+    .subtitulo {
+      display: none;
+    }
+  }
+}
+
+.conteudo {
+  padding: 100px 0;
+  @include breakpoint($tablet) {
+    padding: 50px 0;
+  }
+}
+
+.overlay {
+}
+
+.depoimentos {
+  height: 582px;
+  overflow-x: hidden;
+  clear: both;
+  @include clearfix;
+  background: url(../img/gradiente_depoimentos.png) repeat-x;
+  background-size: cover;
+  position: relative;
+  @include breakpoint($tablet) {
+    height: auto;
+    padding-bottom: 30px;
+  }
+  img {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    float: left;
+    width: 30%;
+    max-width: 427px;
+    @include breakpoint($tablet) {
+      display: none;
+    }
+  }
+  .carousel {
+    float: right;
+    width: 70%;
+    padding: 0 100px;
+    padding-top: 100px;
+    @include breakpoint($tablet) {
+      width: 100%;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #215aca;
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 0px;
+      @include breakpoint($tablet) {
+        margin-top: 25px;
+        font-size: 25px;
+        margin-bottom: 40px;
+      }
+    }
+    .owl-depoimentos {
+      .item {
+        padding: 30px;
+        box-shadow: 0 0 27px rgba(90, 131, 233, 0.07);
+        background-color: #ffffff; // min-height: 235px;
+        text-align: center;
+        @include breakpoint(max-width 1600px) {
+          padding: 15px;
+        }
+        .resumo {
+          color: #272d31;
+          font-size: 18px;
+          font-weight: 600;
+          @include breakpoint(max-width 1600px) {
+            font-size: 16px;
+          }
+        }
+        .descricao {
+          color: #a1a1a1;
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 20px;
+          padding: 28px 0;
+          @include breakpoint(max-width 1600px) {
+            font-size: 15px;
+            padding-top: 15px;
+          }
+        }
+        .nome {
+          font-size: 16px;
+          font-weight: 400;
+          color: #3c4146;
+          @include breakpoint(max-width 1600px) {
+            font-size: 14px;
+          }
+        }
+        .empresa {
+          color: #6c6f73;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.aplicativo {
+  clear: both;
+  padding: 60px 0;
+  @include breakpoint($tablet) {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+  .layout {
+    @include clearfix;
+    .esquerda {
+      width: 50%;
+      float: left;
+      padding-right: 30px;
+      @include breakpoint($tablet) {
+        width: 100%;
+        float: none;
+        padding: 0;
+      }
+      .texto {
+        text-align: right;
+        max-width: 524px;
+        float: right;
+        @include breakpoint($tablet) {
+          text-align: center;
+          max-width: none;
+        }
+        h2 {
+          color: #215aca;
+          font-size: 22px;
+          font-weight: 400;
+          max-width: 350px;
+          float: right;
+          margin-bottom: 24px;
+          margin-top: 55px;
+          @include breakpoint($tablet) {
+            margin-top: 30px;
+            font-size: 19px;
+            max-width: none;
+            float: none;
+          }
+        }
+        p {
+          width: 100%;
+          clear: both;
+          color: #a1a1a1;
+          font-size: 17px;
+          font-weight: 400;
+          @include breakpoint($tablet) {
+            font-size: 15px;
+          }
+        }
+        .lojas {
+          width: 100%;
+          clear: both;
+          margin-top: 30px;
+          text-align: right;
+          @include breakpoint($tablet) {
+            text-align: center;
+          }
+          a {
+            display: inline-block;
+            padding: 0 10px;
+            @include breakpoint($tablet) {
+              padding: 0 5px;
+              max-width: 135px;
+            }
+            img {
+            }
+          }
+        }
+      }
+    }
+    .direita {
+      padding-left: 30px;
+      width: 50%;
+      float: left;
+      @include breakpoint($tablet) {
+        width: 100%;
+        float: none;
+        display: none;
+      }
+      .texto {
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+ul.paginacao {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  li {
+    display: inline-block;
+    position: relative;
+    a {
+      position: relative;
+      padding: 4px 10px;
+      border: 1px solid #c1c4d8;
+      color: #585c78;
+      text-decoration: none;
+    }
+  }
+}
+
+.depoimento-video {
+  padding: 65px 20px;
+  h2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 500px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 36px;
+    font-size: 25px;
+    @include breakpoint($tablet) {
+      font-size: 20px;
+      line-height: 22px;
+    }
+    span {
+      font-size: 35px;
+      display: block;
+      @include breakpoint($tablet) {
+        font-size: 20px;
+        line-height: 22px;
+        display: inline-block;
+      }
+    }
+  }
+  img {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+}
+
+.prints {
+  background: #f9faff;
+  padding-top: 30px;
+  .layout {
+    @include clearfix;
+    .titulo_bloco {
+      text-align: center;
+      margin-bottom: 60px;
+      h2 {
+        color: #215aca;
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        @include breakpoint($tablet) {
+          font-size: 25px;
+        }
+      }
+      .subtitulo {
+        color: #818194;
+        font-size: 18px;
+        font-weight: 400;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 405px;
+        @include breakpoint($tablet) {
+          font-size: 16px;
+        }
+      }
+    }
+    .blocos {
+      .bloco {
+        clear: both;
+        padding-bottom: 100px;
+        float: left;
+        width: 100%;
+        &:last-child {
+          padding-bottom: 30px;
+        }
+        &:nth-child(even) {
+          .texto {
+            float: left;
+            text-align: right;
+            padding-right: 75px;
+            padding-left: 0;
+            &:after {
+              display: none;
+            }
+            @include breakpoint($tablet) {
+              padding-right: 0;
+            }
+            .bloco {
+              padding-left: 0;
+              padding-right: 100px;
+              @include breakpoint($tablet) {
+                padding-right: 0;
+                text-align: center;
+              }
+            }
+            .bloco_texto {
+              padding-left: 0 !important;
+              padding-right: 100px;
+              @include breakpoint($tablet) {
+                padding-right: 0;
+              }
+            }
+            img {
+              left: initial !important;
+              right: 0;
+            }
+          }
+          .foto {
+            float: right;
+            padding-left: 35px;
+            padding-right: 0;
+            .tag {
+              right: initial;
+              left: 10px;
+              @include breakpoint($tablet) {
+                left: -20px;
+              }
+            }
+            @include breakpoint($tablet) {
+              padding-right: 0;
+              padding-left: 0;
+            }
+          }
+        } // nth-child
+        .foto {
+          @include col2;
+          padding-right: 35px;
+          position: relative;
+          @include breakpoint($tablet) {
+            padding: 0;
+            right: -13px;
+          }
+          .tag {
+            box-shadow: 0 -3px 10px rgba(90, 131, 233, 0.18);
+            border-radius: 10px;
+            background-color: #4496ef;
+            width: 230px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 15px 15px;
+            border-left: #57a1f1 10px solid;
+            position: absolute;
+            top: 20%;
+            right: 50px;
+            @include breakpoint($tablet) {
+              font-size: 15px;
+              padding: 10px;
+              right: 0;
+              position: relative;
+              top: 0;
+              left: -17px;
+              background: none;
+              color: $azul;
+              text-align: center;
+              border: 0;
+              box-shadow: none;
+              display: block;
+              width: 100%;
+              font-size: 22px;
+              margin-bottom: 10px;
+            }
+          }
+          img {
+            max-width: 755px;
+            width: 100%;
+          }
+        }
+        .texto {
+          @include col2;
+          padding-left: 51px;
+          padding-top: 10px;
+          background: none;
+          padding-bottom: 0;
+          &:after {
+            display: none;
+          }
+          @include breakpoint($tablet) {
+            padding: 0;
+          }
+          .bloco_texto {
+            position: relative;
+            margin-bottom: 45px;
+            padding-left: 100px;
+            @include breakpoint($tablet) {
+              padding-left: 0;
+              text-align: center;
+              margin-bottom: 25px;
+            }
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              @include breakpoint($tablet) {
+                position: relative;
+                margin-bottom: 10px;
+              }
+            }
+            .azul {
+              color: #1c50b5;
+              font-size: 18px;
+              font-weight: 600;
+              margin-bottom: 10px;
+              @include breakpoint($tablet) {
+                font-size: 16px;
+              }
+            }
+            .cinza {
+              color: #8992be;
+              font-size: 16px;
+              font-weight: 300;
+              line-height: 18px;
+              max-width: 415px;
+              display: inline-block;
+              @include breakpoint($tablet) {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      } // bloco
+    }
+  }
+}
+
+.info-gratuidade {
+  text-align: center;
+  color: #516b9e;
+  margin-top: 25px;
+}

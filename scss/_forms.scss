@@ -1,0 +1,190 @@
+/*===================================
+=            formulários            =
+===================================*/
+
+form,
+.form {
+    width: 100%;
+    .linha {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .half,
+    .metade {
+        @include col2;
+    }
+    .third,
+    .terco {
+        @include col3;
+    }
+    .forth,
+    .quarto {
+        @include col4;
+    }
+    .full,
+    .completo {
+        width: 100%;
+    }
+    .full,
+    .completo,
+    .half,
+    .metade,
+    .third,
+    .terco,
+    .forth,
+    .quarto {
+        input,
+        select,
+        textarea {
+            width: 100%;
+        }
+    }
+    .input_style {
+        width: 100%;
+        outline: none;
+        font-family: 'Nunito', sans-serif;
+        height: 45px;
+        border: 0;
+        box-shadow: 0 0 27px rgba(90, 131, 233, 0.07);
+        background-color: #ffffff;
+        color: #afbdd7;
+        padding-left: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        @include placeholder {
+            opacity: 1 !important;
+            color: #afbdd7;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 30px;
+        }
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="file"],
+    input[type="password"],
+    input[type="search"],
+    input[type="checkbox"],
+    input[type="radio"] {
+        @extend .input_style;
+        &:hover,
+        &:focus {}
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+    select {
+        @extend .input_style;
+        option {}
+    }
+    textarea {
+        @extend .input_style;
+        padding-top: 6px;
+        height: 115px;
+        &:hover,
+        &:focus {}
+    }
+    input[type="submit"],
+    button[type="submit"] {
+        height: auto;
+        cursor: pointer;
+        height: 45px;
+        box-shadow: 0 0 27px rgba(90, 131, 233, 0.07);
+        border-radius: 5px;
+        background-color: #44b953;
+        border: 0;
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 30px;
+        &:disabled {
+            cursor: not-allowed;
+        }
+    } // form
+    .checkbox,
+    .checkbox-1,
+    .checkbox-primary-1 {
+        position: relative;
+        padding-left: 27px;
+        display: inline-block;
+        cursor: pointer;
+        padding-right: 15px;
+        float: left;
+        line-height: 19px;
+        height: 20px;
+        &.right {
+            float: right;
+            padding-left: 15px;
+            padding-right: 25px;
+            position: relative;
+            top: -4px;
+            &:before {
+                left: initial;
+                right: 0;
+                top: 1px;
+                width: 15px;
+                height: 15px;
+            }
+            &:after {
+                left: initial;
+                right: 4px;
+                font-size: 10px;
+            }
+        }
+        label {
+            cursor: pointer;
+        }
+        &:before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            display: block;
+            background: #fff;
+            z-index: 1;
+            border: 1px solid #dce3f1;
+            transition: background .35s ease-in-out, color .35s ease-in-out;
+            border-radius: 4px;
+        }
+        &:after {
+            transition: background .35s ease-in-out, color .35s ease-in-out;
+            font-family: 'Font Awesome 5 Pro';
+            content: "\f00c";
+            position: absolute;
+            font-weight: 900;
+            width: 10px;
+            height: 10px;
+            display: block;
+            z-index: 2;
+            opacity: 0;
+            top: 1px;
+            font-size: 12px;
+            color: #fff;
+            left: 4px;
+        }
+        &.ativo {
+            &:before {
+                background: #5da6ec;
+                border: 1px solid #5da6ec;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        input {
+            margin-top: 2px;
+            height: 0;
+            float: left;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+} // form

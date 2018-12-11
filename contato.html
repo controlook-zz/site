@@ -1,0 +1,30 @@
+---
+layout: page
+title: Fale Conosco
+body_class: contato
+---
+
+<div class="layout">
+    <div class="esquerda">
+        <form accept-charset="UTF-8" action="https://formspree.io/contato@controlook.com" method="POST" id="main_contact_form">
+            <input type="hidden" name="page" value="contato">
+            <div class="linha">
+                <input class="full" name="nome" placeholder="Seu Nome" type="text" required>
+            </div>
+            <div class="linha">
+                <input class="full" name="email" placeholder="Seu E-mail" type="email" required>
+            </div>
+            <div class="linha">
+                <input class="full" name="telefone" placeholder="Seu Telefone" type="tel">
+            </div>
+            <div class="linha">
+                <textarea class="full" name="mensagem" placeholder="Sua Mensagem"></textarea>
+            </div>
+            <input type="submit" value="Mande uma Mensagem" class="botao azul">
+        </form>
+    </div>
+    <div class="direita">
+        {%- include contacts.html -%}
+    </div>
+</div>
+{%- include locality-map.html -%}

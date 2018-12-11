@@ -1,0 +1,37 @@
+---
+layout: page
+title: Quero receber uma ligação
+body_class: contato
+noindex: true
+---
+
+<div class="layout">
+    <div class="esquerda">
+        <form accept-charset="UTF-8" action="https://formspree.io/contato@controlook.com" method="POST" id="main_contact_form">
+            <input type="hidden" name="page" value="quero-receber-uma-ligacao">
+            <div class="linha">
+                <input class="full" name="nome" placeholder="Seu Nome" type="text" required>
+            </div>
+            <div class="linha">
+                <input class="full" name="email" placeholder="Seu E-mail" type="email" required>
+            </div>
+            <div class="linha">
+                <input class="full" name="igreja" placeholder="Igreja" type="text">
+            </div>
+            <div class="linha">
+                <input class="full" name="horario" placeholder="Melhor horário para receber uma ligação" type="text">
+            </div>
+            <div class="linha">
+                <input class="full" name="telefone" placeholder="Seu Telefone" type="tel">
+            </div>
+            <div class="linha">
+                <textarea class="full" name="mensagem" placeholder="Sua Mensagem"></textarea>
+            </div>
+            <input type="submit" value="Enviar mensagem" class="botao azul">
+        </form>
+    </div>
+    <div class="direita">
+        {%- include contacts.html -%}
+    </div>
+</div>
+{%- include locality-map.html -%}

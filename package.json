@@ -1,0 +1,21 @@
+{
+  "name": "AppName",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^6.0.6",
+    "susy": "^3.0.1",
+    "webpack": "^2.7.0"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "g": "^2.0.1",
+    "npm": "^6.4.1"
+  }
+}
