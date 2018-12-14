@@ -4,7 +4,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Controlook é um sistema online para organizar sua igreja
   com uma eficaz gestão financeira e controle dos membros
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://controlook.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.controlook.com"
 url_signup: "https://sys.controlook.com/signup/"
 url_login: "https://sys.controlook.com"
 twitter_username: controlook
