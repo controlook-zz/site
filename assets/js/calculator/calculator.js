@@ -1,4 +1,4 @@
-const API_URL = 'https://sys.controlook.com/signup';
+const API_URL = 'https://signup.controlook.com';
 
 async function main() {
     const ROW_TEMPLATE = `
