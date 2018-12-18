@@ -6,8 +6,10 @@ body_class: contato
 
 <div class="layout">
     <div class="esquerda">
-        <form accept-charset="UTF-8" action="https://formspree.io/contato@controlook.com" method="POST" id="main_contact_form">
-            <input type="hidden" name="page" value="contato">
+        <form accept-charset="UTF-8" action="https://formsubmit.io/send/ca335d4b-6030-49a4-b783-6f80c75314b7" method="POST" id="main_contact_form">
+            <input type="hidden" name="page" value="contato controlook">
+            <input name="_redirect" type="hidden" id="name" value="{{ site.url }}/obrigado-pelo-contato">
+            <input name="_formsubmit_id" type="text" style="display:none">
             <div class="linha">
                 <input class="full" name="nome" placeholder="Seu Nome" type="text" required>
             </div>
