@@ -15,6 +15,11 @@
 <meta property="og:site_name" content="{% if page.title %}{{ page.title | append: " - Controlook" }}{% else %}{{ site.title }}{% endif %}" />
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 <meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="/assets/img/img-facebook.jpg" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title | append: " - Controlook" }}{% else %}{{ site.title }}{% endif %}" />
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:site" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 <meta name="msvalidate.01" content="37C9DAE6E3483747938E4E3600C23B3E" />
 <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
