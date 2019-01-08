@@ -33,7 +33,6 @@ exclude:
   - node_modules
   - package-lock.json
   - package.json
-  - run.sh
   - scss
   - vendor/bundle/
   - vendor/cache/
