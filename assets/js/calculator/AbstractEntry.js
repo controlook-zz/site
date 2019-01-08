@@ -2,10 +2,11 @@
  * @abstract
  */
 class AbstractEntry {
-    constructor($element) {
+    constructor($element, required = false) {
         this._$element = $element;
         this._$enabled = $element.find('[data-product-key="enabled"]');
 
+        this._required = required;
         this._enabled = true;
         this._onUpdate = null;
     }
@@ -42,9 +43,16 @@ class AbstractEntry {
      * @protected
      */
     set enabled(enabled) {
-        this._enabled = enabled;
+        this._enabled = this._required || enabled;
 
         this.update();
+    }
+
+    /**
+     * @protected
+     */
+    get required() {
+        return this._required;
     }
 
     /**
@@ -70,6 +78,10 @@ class AbstractEntry {
      * @protected
      */
     configure() {
+        this._required && this._$enabled
+            .parents('.checkbox')
+            .addClass('disabled');
+
         this._$enabled.change(
             this._handleChange.bind(this)
         );
@@ -80,8 +92,6 @@ class AbstractEntry {
     _handleChange(e) {
         e.preventDefault();
 
-        this._enabled = $(e.target).prop('checked');
-
-        this.update();
+        this.enabled = $(e.target).prop('checked');
     }
 }

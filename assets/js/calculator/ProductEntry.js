@@ -1,6 +1,6 @@
 class ProductEntry extends AbstractEntry {
     constructor($element, config, preset) {
-        super($element);
+        super($element, config.required);
 
         this._$btnLess = $element.find('[data-product-key="less"]');
         this._$btnMore = $element.find('[data-product-key="more"]');
